@@ -10,7 +10,7 @@
 - [submission PR](https://github.com/ayman-401-advanced-javascript/lab05/runs/408877260?check_suite_focus=true) (GitHub Actions)
 
 ### Setup
-npm i jest eslint mongo
+npm i jest eslint mongoose @code-fellows/supergoose
 
 #### How to initialize/run your application (where applicable)
 
