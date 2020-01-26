@@ -3,7 +3,6 @@
 const mongoose = require('mongoose');
 
 const product = mongoose.Schema({
-  category_id: { type: 'string', required: true },
   price: { type: 'number', required: true },
   weight: { type: 'number' },
   quantity_in_stock: { type: 'number', required: true },
