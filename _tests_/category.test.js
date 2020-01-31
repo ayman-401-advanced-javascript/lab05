@@ -18,7 +18,7 @@ describe('Categories Model', () => {
         Object.keys(obj).forEach(key => {
           expect(record[key]).toEqual(obj[key]);
         });
-      })
+      });
   });
 
   it('can get() a category', () => {
@@ -37,16 +37,16 @@ describe('Categories Model', () => {
     let obj = { name: 'test Category new' };
     return categories.create(obj)
       .then(record => {
-        record.name = 'new test update'
-            return categories.update(record._id,record)
-            .then(newCategory => {
+        record.name = 'new test update';
+        return categories.update(record._id,record)
+          .then(newCategory => {
             return categories.get(newCategory._id)
-            .then(category=>{
-            //   console.log(category)
-              Object.keys(obj).forEach(key => {
-                expect(category[key]).toEqual(newCategory[key]);
+              .then(category=>{
+                //   console.log(category)
+                Object.keys(obj).forEach(key => {
+                  expect(category[key]).toEqual(newCategory[key]);
+                });
               });
-            })
           });
       });
   });
@@ -57,13 +57,13 @@ describe('Categories Model', () => {
         return categories.get(record._id)
           .then(category => {
             return categories.delete(category._id)
-            .then(()=>{
+              .then(()=>{
                 return categories.get(category._id)
-                .then(catag=>{
+                  .then(catag=>{
                     
                     expect(catag).toBeNull();
-                })
-            })
+                  });
+              });
           });
       });
   });
